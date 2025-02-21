@@ -33,16 +33,16 @@ const Login = () => {
   return (
     <div>
         <Navbar/>
-        <div className="max-w-7xl mx-auto flex justify-around items-center">
-            <div className="w-1/2">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row md:flex-row justify-around items-center">
+            <div className="lg:w-1/2 md:w-1/2">
             <DotLottieReact
         src="https://lottie.host/5ccc8667-39e6-4a2c-aac1-b63eb0212a1f/KF8VTCGfUi.lottie"
         loop
         autoplay
       />
             </div>
-            <div className="w-[1px] h-[400px] bg-black ml-0"></div>
-            <div className="w-1/2 flex justify-center items-center h-screen">
+            <div className="w-[1px] h-[400px] bg-black ml-0 hidden lg:block md:block"></div>
+            <div className="lg:w-1/2 md:w-1/2 w-full flex justify-center items-center lg:h-screen md:h-screen">
       <div className=" p-8 rounded-2xl text-center">
         <h2 className="text-2xl font-bold mb-6">Welcome</h2>
         <p className="text-md my-4 text-blue-500">Want to Manage Your Task ?</p>
