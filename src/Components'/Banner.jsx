@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -18,12 +19,11 @@ const Banner = () => {
           <p className="text-lg sm:text-xl mb-6">
             Your guide to success, career growth, and professional development.
           </p>
-          <a
-            href="#services"
+          <Link to='/addtask'
             className="inline-block bg-white text-black px-8 py-3 rounded-full text-lg hover:bg-gray-200 transition duration-300"
           >
-            Explore Services
-          </a>
+            Add your Task
+          </Link>
         </div>
       </div>
     </section>

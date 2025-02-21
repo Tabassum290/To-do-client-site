@@ -38,7 +38,6 @@ const Tasks = () => {
     }
   };
   
-
   const toDoTasks = data?.filter((task) => task.category === "To-Do") || [];
   const inProgressTasks = data?.filter((task) => task.category === "In-Progress") || [];
   const doneTasks = data?.filter((task) => task.category === "Done") || [];
@@ -119,91 +118,92 @@ const Tasks = () => {
           );
         })}
 
-        {isModalOpen && (
-          <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
-              <h2 className="text-2xl font-semibold mb-4 text-black" >Edit Task Status</h2>
-              <form
-  onSubmit={(e) => {
-    e.preventDefault();
-    const title = e.target.title.value;
-    const description = e.target.description.value;
-    const time = e.target.time.value;
-    handleStatusChange(title, description, time); 
-  }}
->
-  <label className="form-control w-full">
-    <div className="label">
-      <span className="label-text">Title</span>
-    </div>
-    <input
-      type="text"
-      name="title"
-      placeholder="Type here"
-      defaultValue={selectedTask?.title}
-      className="input input-bordered w-full"
-      maxLength={50}
-      required
-    />
-  </label>
-
-  <label className="form-control w-full">
-    <div className="label">
-      <span className="label-text">Description</span>
-    </div>
-    <textarea
-      name="description"
-      className="textarea textarea-bordered w-full"
-      placeholder="Type here"
-      defaultValue={selectedTask?.description}
-      maxLength={200}
-    ></textarea>
-  </label>
-
-  <label className="form-control w-full">
-    <div className="label">
-      <span className="label-text">Timestamp</span>
-    </div>
-    <input
-      type="text"
-      name="time"
-      placeholder="Type here"
-      className="input input-bordered w-full"
-      defaultValue={new Date().toLocaleString()}
-      readOnly
-    />
-  </label>
-
-  <div className="mb-4">
-    <label className="block text-sm font-medium text-gray-700">Status</label>
-    <select
-      value={newStatus}
-      onChange={(e) => setNewStatus(e.target.value)}
-      className="select select-bordered w-full mt-2"
-    >
-      <option value="To-Do">To-Do</option>
-      <option value="In-Progress">In-Progress</option>
-      <option value="Done">Done</option>
-    </select>
-  </div>
-
-  <div className="flex justify-between mt-4">
-    <button type="submit" className="btn btn-primary w-full sm:w-auto">
-      Save Changes
-    </button>
-    <button
-      type="button"
-      onClick={() => setIsModalOpen(false)}
-      className="btn btn-secondary w-full sm:w-auto ml-4"
-    >
-      Close
-    </button>
-  </div>
-</form>
-
-            </div>
+{isModalOpen && (
+  <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50">
+    <div className="bg-white text-black p-6 rounded-md shadow-lg w-80 sm:w-80 md:w-96 lg:w-1/3 max-h-full sm:max-h-[80vh] lg:max-h-[60vh] overflow-y-auto">
+      <h2 className="text-2xl font-semibold mb-4 text-black">Edit Task Status</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const title = e.target.title.value;
+          const description = e.target.description.value;
+          const time = e.target.time.value;
+          handleStatusChange(title, description, time); 
+        }}
+      >
+        <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text">Title</span>
           </div>
-        )}
+          <input
+            type="text"
+            name="title"
+            placeholder="Type here"
+            defaultValue={selectedTask?.title}
+            className="input input-bordered w-full"
+            maxLength={50}
+            required
+          />
+        </label>
+
+        <label className="form-control w-full mt-4">
+          <div className="label">
+            <span className="label-text">Description</span>
+          </div>
+          <textarea
+            name="description"
+            className="textarea textarea-bordered w-full"
+            placeholder="Type here"
+            defaultValue={selectedTask?.description}
+            maxLength={200}
+          ></textarea>
+        </label>
+
+        <label className="form-control w-full mt-4">
+          <div className="label">
+            <span className="label-text">Timestamp</span>
+          </div>
+          <input
+            type="text"
+            name="time"
+            placeholder="Type here"
+            className="input input-bordered w-full"
+            defaultValue={new Date().toLocaleString()}
+            readOnly
+          />
+        </label>
+
+        <div className="mb-4 mt-4">
+          <label className="block text-sm font-medium text-gray-700">Status</label>
+          <select
+            value={newStatus}
+            onChange={(e) => setNewStatus(e.target.value)}
+            className="select select-bordered w-full mt-2"
+          >
+            <option value="To-Do">To-Do</option>
+            <option value="In-Progress">In-Progress</option>
+            <option value="Done">Done</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-between mt-4">
+          <button type="submit" className="btn text-white btn-primary w-full sm:w-auto mb-4 sm:mb-0">
+            Save Changes
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(false)}
+            className="btn text-white btn-secondary w-full sm:w-auto"
+          >
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
+
       </div>
     </div>
   );

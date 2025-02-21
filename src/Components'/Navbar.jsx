@@ -14,7 +14,6 @@ const Navbar = () => {
         <>
             <NavLink to="/" className="px-4 py-2">Home</NavLink>
             <NavLink to="/addtask" className="px-4 py-2">Add Task</NavLink>
-            <NavLink to="/" className="px-4 py-2">Contact</NavLink>
         </>
     );
 
@@ -41,12 +40,12 @@ const Navbar = () => {
                         </button>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                            className="menu menu-sm dropdown-content text-black bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
                         >
                             {links}
                         </ul>
                     </div>
-                    <a className="text-xl font-serif">TO_DO</a>
+                    <a className="text-xl font-serif uppercase italic font-semibold">FlowTask</a>
                 </div>
 
                 <div className="hidden lg:flex space-x-4">{links}</div>

@@ -42,6 +42,7 @@ const AddTask = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <h1 className="text-4xl text-center my-6 font-semibold">Add New Task</h1>
+      <div className="px-6">
       <form
         onSubmit={handleForm}
         className="max-w-2xl mx-auto my-8 border border-yellow-400 p-8 flex flex-col gap-6 rounded-md shadow-lg bg-white w-full sm:w-3/4 md:w-2/3 lg:w-1/2"
@@ -110,6 +111,8 @@ const AddTask = () => {
           {loading ? "Saving..." : "Add Task"}
         </button>
       </form>
+      </div>
+    
       <Footer />
     </div>
   );
