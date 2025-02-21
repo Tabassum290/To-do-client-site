@@ -89,11 +89,11 @@ const Tasks = () => {
               <h2 className="text-2xl font-semibold mb-4">{categoryNames[index]}</h2>
               <div className="space-y-4">
                 {taskCategory.map((task) => (
-                  <div key={task._id} className="card card-compact w-full bg-base-100 shadow-md h-64">
+                  <div key={task._id} className="card card-compact w-full shadow-md h-64 task border border-[#b1abef] text-black">
                     <div className="card-body flex flex-col justify-between h-full">
                       <h3 className="text-lg font-semibold">{task.title}</h3>
                       <p className="text-sm">{task.description}</p>
-                      <p className="text-sm text-gray-500">{task.timestamp}</p>
+                      <p className="text-sm text-gray-900">{task.timestamp}</p>
                       <div className="flex justify-between items-center">
                         <div className="mt-2">
                           <span className="badge badge-success text-white py-2">{task.category}</span>
@@ -122,7 +122,7 @@ const Tasks = () => {
         {isModalOpen && (
           <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50">
             <div className="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
-              <h2 className="text-2xl font-semibold mb-4">Edit Task Status</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-black" >Edit Task Status</h2>
               <form
   onSubmit={(e) => {
     e.preventDefault();

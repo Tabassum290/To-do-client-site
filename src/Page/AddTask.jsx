@@ -104,7 +104,7 @@ const AddTask = () => {
 
         <button
           type="submit"
-          className="btn btn-md mt-6 w-full sm:w-auto"
+          className="btn btn-md btn-primary mt-6 w-full sm:w-auto"
           disabled={loading}
         >
           {loading ? "Saving..." : "Add Task"}

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-white text-black;
+  }
+ .dark .para{
+    @apply text-black;
+  }
+.dark .name{
+    @apply text-white;
+  }
+  .dark .job{
+    @apply border-gray-400 bg-white;
+  }
+  .dark body {
+    @apply bg-gray-900 text-white;
+  }
+.dark .task{
+  @apply bg-[#b1abef];
+}
+.dark all{
+   @apply text-black;
+}

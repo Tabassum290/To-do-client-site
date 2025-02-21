@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Theme from "./Theme";
 
 const Navbar = () => {
   const {user,signOutUser} = useContext(AuthContext);
@@ -51,6 +52,9 @@ const Navbar = () => {
                 <div className="hidden lg:flex space-x-4">{links}</div>
 
                 <div className="flex items-center">
+                    <div className="px-2">
+                        <Theme/>
+                    </div>
                   {
                     user?  <button onClick={logOut} className="btn text-yellow-600 bg-white">Logout</button> :  <Link to="/login" className="btn text-yellow-600 bg-white">Login</Link>
                   }
