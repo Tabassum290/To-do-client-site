@@ -12,7 +12,7 @@ const Navbar = () => {
     const links = (
         <>
             <NavLink to="/" className="px-4 py-2">Home</NavLink>
-            <NavLink to="/" className="px-4 py-2">About</NavLink>
+            <NavLink to="/addtask" className="px-4 py-2">Add Task</NavLink>
             <NavLink to="/" className="px-4 py-2">Contact</NavLink>
         </>
     );
@@ -52,7 +52,7 @@ const Navbar = () => {
 
                 <div className="flex items-center">
                   {
-                    user?  <Link to="/login" className="btn text-yellow-600 bg-white">Login</Link> :  <Link to="/login" className="btn text-yellow-600 bg-white">Login</Link>
+                    user?  <button onClick={logOut} className="btn text-yellow-600 bg-white">Logout</button> :  <Link to="/login" className="btn text-yellow-600 bg-white">Login</Link>
                   }
 
                 </div>

@@ -6,23 +6,27 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import UsePublic from "../Hooks/UsePublic";
+
 const Login = () => {
     const {setUser,signinWithGoogle} = useContext(AuthContext);
+    const axiosPublic = UsePublic();
     const navigate = useNavigate()
     const handleGoogle =()=>{
 		signinWithGoogle()
-		.then(res =>{
-            console.log(res.data);
-			// const userInfo ={
-			// 	email : result.user?.email,
-            //     name: result.user?.displayName,
-			// }
-			// axiosPublic.post('/users',userInfo)
-			// .then(res=>{
-			// 	console.log(res.data);
-			// 	toast.success("Login Successfull", "Welcome!","success");
-			// 	navigate('/');
-			// })
+		.then(result =>{
+			const userInfo ={
+        uid: result.user?.uid,
+        name: result.user?.displayName,   
+				email : result.user?.email,
+			}
+      console.log(userInfo);
+			axiosPublic.post('/users',userInfo)
+			.then(res=>{
+				console.log(res.data);
+				toast.success("Login Successfull", "Welcome!","success");
+				navigate('/');
+			})
 		})
 		}
   
