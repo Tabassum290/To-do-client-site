@@ -18,7 +18,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="w-full bg-[#344CB7] text-[#FFEB00]">
+        <div className="sticky top-0 z-10 w-full bg-[#344CB7] text-[#FFEB00]">
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
                 <div className="flex items-center gap-4">
                     <div className="dropdown lg:hidden">
